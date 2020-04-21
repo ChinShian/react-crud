@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
 import { withRouter } from 'react-router-dom'
 import * as Yup from 'yup'
 
 function Dataaddition(props) {
   const phoneRegExp = /^09\d{2}\d{3}\d{3}$/
-  const [formikmember, setFormikmember] = useState([])
-  console.log(formikmember)
   const formik = useFormik({
     initialValues: {
       Name: '',
@@ -36,17 +34,7 @@ function Dataaddition(props) {
       await props.history.push('/')
     },
   })
-  async function getFromServer() {
-    const request = new Request(`http://localhost:5500/crud/data`, {
-      method: 'GET',
-    })
-    const response = await fetch(request)
-    const data = await response.json()
-    setFormikmember(data)
-  }
-  useEffect(() => {
-    getFromServer()
-  }, [])
+
   return (
     <>
       <form onSubmit={formik.handleSubmit} className="formsubmit">
