@@ -15,9 +15,9 @@ function LeftList(props) {
       <div className="nav">
         <ul className={ListClassName}>
           <li>
-            <span>Example user</span>
+            <span>Member user</span>
             <span>
-              Example position
+              Member Menu
               <FaCaretDown />
             </span>
           </li>
